@@ -1,0 +1,15 @@
+<div fxLayout="row" fxLayoutGap="20px">
+
+    <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" (keyup)="updateName($event)">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Subsystem</mat-label>
+        <mat-select multiple (selectionChange)="updateSubsystems($event)">
+            <mat-option *ngFor="let s of subSystems" [value]="s">{{ s }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+</div>

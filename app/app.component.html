@@ -1,0 +1,19 @@
+<div fxLayout="column" fxLayoutGap="30px">
+
+  <mat-form-field appearance="fill">
+    <mat-label>Implementation</mat-label>
+    <mat-select [(ngModel)]="selection">
+        <mat-option *ngFor="let s of selections" [value]="s">{{ s }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+  <main>
+    <app-header [implementation]="selection"></app-header>
+    <ng-container [ngSwitch]="selection">
+        <app-pull-based *ngSwitchCase="'Pull Based'"></app-pull-based>
+        <app-push-based *ngSwitchCase="'Push Based'"></app-push-based>
+    </ng-container>
+  </main>
+
+</div>
